@@ -1,11 +1,11 @@
 module SessionHelpers
 
-  # def sign_in(email:, password:)
-  #   visit '/sessions/new'
-  #   fill_in :email, with: email
-  #   fill_in :password, with: password
-  #   click_button 'Log in'
-  # end
+  def log_in(email: 'alice@example.com', password:'12345678')
+    visit '/sessions/new'
+    fill_in :email, with: email
+    fill_in :password, with: password
+    click_button 'Log in'
+  end
 
   def sign_up(name:'Alice Inne',
               username:'Wonderland',

@@ -1,5 +1,8 @@
 class Arrrgbnb < Sinatra::Base
 
+  get '/' do
+    redirect '/users/dashboard' #temporary redirect until property page is updated
+  end
 
   get '/users/new' do
     @user = User.new
@@ -15,12 +18,16 @@ class Arrrgbnb < Sinatra::Base
                          name:params[:name]
                        )
     if @user.save
-      'Welcome, alice@example.com'
-      # redirect '/sessions/new'
+      session[:user_id] = @user.id
+      redirect '/users/dashboard'
     else
       flash.now[:errors] = @user.errors.full_messages
       erb :'users/new'
     end
+  end
+
+  get '/users/dashboard' do
+    erb :'users/dashboard'
   end
 
   # start the server if ruby file executed directly
