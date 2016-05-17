@@ -8,3 +8,4 @@ require_relative 'models/property'
 DataMapper.setup(:default, ENV['DATABASE_URL'] ||
                  "postgres://localhost/arrrgbnb_#{ENV['RACK_ENV']}")
 DataMapper.finalize
+DataMapper.auto_upgrade!
