@@ -4,7 +4,7 @@ require File.join(File.dirname(__FILE__), '..', 'app/app.rb')
 
 require 'coveralls'
 require 'simplecov'
-# require 'helpers/session'
+require 'helpers/session'
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
