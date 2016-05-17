@@ -1,3 +1,6 @@
+[![Coverage Status](https://coveralls.io/repos/github/rahulrama/arrrgbnb/badge.svg?branch=master)](https://coveralls.io/github/rahulrama/arrrgbnb?branch=master)
+
+[![Build Status](https://travis-ci.org/rahulrama/arrrgbnb.svg?branch=master)](https://travis-ci.org/rahulrama/arrrgbnb)
 
 This is the repo for the Week 6 Challenge - 'airbnb', presented to students at Makers Academy.
 This file is WIP and will be updated continually during the course of the project.
