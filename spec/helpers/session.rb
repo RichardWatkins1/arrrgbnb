@@ -1,6 +1,6 @@
 module SessionHelpers
 
-<<<<<<< HEAD
+
   def create_property_1
     visit '/property/new'
     fill_in :title, with: 'Big House'
@@ -25,7 +25,6 @@ module SessionHelpers
     click_button 'Create listing'
   end
 
-=======
   def log_in(email: 'alice@example.com', password:'12345678')
     visit '/sessions/new'
     fill_in :email, with: email
@@ -55,5 +54,5 @@ module SessionHelpers
 #     fill_in :email, with: "alice@example.com"
 #     click_button "Submit"
 #   end
->>>>>>> master
+
 end

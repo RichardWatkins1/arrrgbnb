@@ -2,12 +2,6 @@ ENV['RACK_ENV'] = 'test'
 
 require File.join(File.dirname(__FILE__), '..', 'app/app.rb')
 
-<<<<<<< HEAD
-require 'coveralls'
-require 'simplecov'
-require 'helpers/session'
-=======
->>>>>>> master
 require 'capybara'
 require 'capybara/rspec'
 require 'coveralls'
