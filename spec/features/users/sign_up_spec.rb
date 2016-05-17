@@ -1,4 +1,5 @@
 feature 'User sign up' do
+
   scenario 'I can sign up for Arrrgbnb' do
     sign_up
     expect(page).to have_content('Welcome, alice@example.com')

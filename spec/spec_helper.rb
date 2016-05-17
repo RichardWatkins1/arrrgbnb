@@ -1,9 +1,14 @@
+ENV['RACK_ENV'] = 'test'
+
+require File.join(File.dirname(__FILE__), '..', 'app/app.rb')
+
+require 'capybara'
+require 'capybara/rspec'
 require 'coveralls'
 require 'simplecov'
 require 'helpers/session'
-require 'capybara'
-require 'capybara/rspec'
 require 'rspec'
+require './app/data_mapper_setup'
 require 'database_cleaner'
 require 'tilt/erb'
 
@@ -14,9 +19,7 @@ SimpleCov.formatters = [
 ]
 Coveralls.wear!
 
-ENV['RACK_ENV'] = 'test'
 
-require File.join(File.dirname(__FILE__), '..', 'app/app.rb')
 
 
 Capybara.app = Arrrgbnb
