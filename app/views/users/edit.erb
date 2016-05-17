@@ -1,0 +1,22 @@
+<h1>Please edit Personal Details</h1>
+
+  <form action='/users' method='post'>
+  <input type="hidden" name="_method" value="patch">
+  <label for='name'>
+    Name:
+    <input type='text' name='name' value= "<%= current_user.name %>" >
+  </label>
+  <label for='username'>
+    Username:
+    <input type='text' name='username' value= "<%= current_user.username %>" required>
+  </label>
+  <label for='email'>
+    Email:
+    <input type='email' name='email' value= "<%= current_user.email %>" required>
+  </label>
+  <label for='phone'>
+    Phone:
+    <input type='text' name='phone' value= "<%= current_user.phone %>" required>
+  </label>
+  <input type='submit' value='Confirm Changes'>
+</form>
