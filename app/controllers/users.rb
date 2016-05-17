@@ -1,7 +1,7 @@
 class Arrrgbnb < Sinatra::Base
 
   get '/' do
-    redirect '/users/new' #temporary redirect until property page is updated
+    redirect '/users/new' #temporary redirect until the landing page is created
   end
 
   get '/users/new' do
