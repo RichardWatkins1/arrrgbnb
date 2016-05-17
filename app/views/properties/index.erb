@@ -1,0 +1,15 @@
+<h1> Properties Available on ArrgBnB </h1>
+
+<ul id='properties'>
+  <% @properties.each do |property| %>
+    <li>
+      <!-- add picture here -->
+      Title: <%= property.title %>
+      Location:   <%= property.location   %>
+      Price:   <%= property.price   %>
+      Sleeps:   <%= property.sleeps   %>
+      Bedrooms:   <%= property.bedrooms  %>
+
+    </li>
+  <% end %>
+</ul>
