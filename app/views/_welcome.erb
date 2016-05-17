@@ -1,0 +1,17 @@
+<header>
+  <div id="logo">Arrrgbnb</div>
+  <div id="user-dashboard">
+    <% if current_user %>
+      <span id="welcome-message">
+        Welcome, <%= current_user.email %>
+      </span>
+
+      <form id="log-out" method="post" action="/sessions">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Log out">
+      </form>
+
+    <% end %>
+
+  </div>
+</header>
