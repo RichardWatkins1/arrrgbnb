@@ -30,6 +30,22 @@ class Arrrgbnb < Sinatra::Base
     erb :'users/dashboard'
   end
 
+  get '/users/edit' do
+    erb :'users/edit'
+  end
+
+  patch '/users' do
+
+    if current_user
+      current_user.update( email:params[:email],
+                   username:params[:username],
+                   phone:params[:phone],
+                   name:params[:name]
+                 )
+      redirect "/users/dashboard"
+    end
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
