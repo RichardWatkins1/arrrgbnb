@@ -1,4 +1,5 @@
 <h1>Please sign up for an account on Arrrgbnb</h1>
+
   <form action='/users' method='post'>
   <label for='name'>
     Name:
@@ -26,6 +27,23 @@
   </label>
   <input type='submit' value='Sign up'>
 </form>
+
+<% if flash[:notice] %>
+  <div id='notice'>
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<% if flash[:errors] && !flash[:errors].empty? %>
+  Please refer to the following errors:
+  <ul id='errors'>
+    <% flash[:errors].each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
 
 <!-- <form action='/sessions/new'>
   <label for='Sign in'>
