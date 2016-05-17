@@ -7,7 +7,7 @@ AUTHORS:
 
 Team Arrrgonaut: Adam Skuse, Rahul Ramakrishna, Richard Watkins, Robin Heathcote and Grig Gerogiokas
 
-![The Arrrgonauts](https://github.com/rahulrama/arrrgbnb/tree/master/public/images/arrrgonauts.png)
+![The Arrrgonauts](https://github.com/rahulrama/arrrgbnb/blob/master/public/images/arrrgonauts.png)
 
 
 USER STORIES:
@@ -45,4 +45,4 @@ I want to be able to list my properties.
 
 DOMAIN MODEL:
 ------------
-![Domain Model](https://github.com/rahulrama/arrrgbnb/tree/master/public/images/arrrgbnb_domain_model.png)
+![Domain Model](https://github.com/rahulrama/arrrgbnb/blob/master/public/images/arrrgbnb_domain_model.png)
