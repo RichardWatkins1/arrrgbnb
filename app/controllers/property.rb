@@ -12,13 +12,15 @@ class Arrrgbnb < Sinatra::Base
 
   post '/property/all' do
   Property.create(
-                            title: params[:title],
-                            property_type: params[:property_type],
-                            location: params[:location],
-                            bedrooms: params[:bedrooms],
-                            sleeps: params[:sleeps],
-                            photo: params[:photo],
-                            price: params[:price]
+                            title:params[:title],
+                            property_type:params[:property_type],
+                            location:params[:location],
+                            bedrooms:params[:bedrooms],
+                            sleeps:params[:sleeps],
+                            photo:params[:photo],
+                            price:params[:price],
+                            date_available_to:params[:date_available_to],
+                            date_available_from:params[:date_available_from]
                             )
     redirect "/property/all"
   end
@@ -31,13 +33,15 @@ class Arrrgbnb < Sinatra::Base
 
     # if current_user    #the property instance below needs to be matched with the user
       Property.update(
-                            title: params[:title],
-                            property_type: params[:property_type],
-                            location: params[:location],
-                            bedrooms: params[:bedrooms],
-                            sleeps: params[:sleeps],
-                            photo: params[:photo],
-                            price: params[:price]
+                            title:params[:title],
+                            property_type:params[:property_type],
+                            location:params[:location],
+                            bedrooms:params[:bedrooms],
+                            sleeps:params[:sleeps],
+                            photo:params[:photo],
+                            price:params[:price],
+                            date_available_to:params[:date_available_to],
+                            date_available_from:params[:date_available_from]
                            )
       redirect "/property/all"
     # end

@@ -9,6 +9,8 @@ module Helpers
     fill_in :sleeps, with: 8
     fill_in :photo, with: 'www.myhousephoto.com'
     fill_in :price, with: 50
+    fill_in :date_available_to, with: '2011-05-30'
+    fill_in :date_available_from, with: '2011-05-14'
     click_button 'Create listing'
   end
 
@@ -21,6 +23,8 @@ module Helpers
     fill_in :sleeps, with: 4
     fill_in :photo, with: 'www.myhousephoto.com'
     fill_in :price, with: 30
+    fill_in :date_available_to, with: '2012-05-30'
+    fill_in :date_available_from, with: '2012-05-14'
     click_button 'Create listing'
   end
 
