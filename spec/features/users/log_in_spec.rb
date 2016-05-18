@@ -1,7 +1,7 @@
 feature 'User log in' do
 
 
-  scenario 'with correct credentials' do
+  scenario 'User can log in with correct credentials' do
     sign_up
     log_in
     expect(current_path).to eq('/users/dashboard')

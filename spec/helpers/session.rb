@@ -1,5 +1,4 @@
-module SessionHelpers
-
+module Helpers
 
   def create_property_1
     visit '/property/new'

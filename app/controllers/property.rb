@@ -3,7 +3,7 @@ class Arrrgbnb < Sinatra::Base
 
   get '/property/all' do
     @properties = Property.all
-    erb(:'properties/index')
+    erb :'properties/index'
   end
 
   get '/property/new' do
@@ -11,7 +11,7 @@ class Arrrgbnb < Sinatra::Base
   end
 
   post '/property/all' do
-    property = Property.create(
+  Property.create(
                             title: params[:title],
                             property_type: params[:property_type],
                             location: params[:location],
@@ -19,8 +19,28 @@ class Arrrgbnb < Sinatra::Base
                             sleeps: params[:sleeps],
                             photo: params[:photo],
                             price: params[:price]
-                             )
-    redirect to('/property/all')
+                            )
+    redirect "/property/all"
+  end
+
+  get '/property/edit' do
+    erb :'properties/edit'
+  end
+
+  patch '/property/all' do
+
+    # if current_user    #the property instance below needs to be matched with the user
+      Property.update(
+                            title: params[:title],
+                            property_type: params[:property_type],
+                            location: params[:location],
+                            bedrooms: params[:bedrooms],
+                            sleeps: params[:sleeps],
+                            photo: params[:photo],
+                            price: params[:price]
+                           )
+      redirect "/property/all"
+    # end
   end
 
   # start the server if ruby file executed directly

@@ -27,7 +27,7 @@ Coveralls.wear!
 Capybara.app = Arrrgbnb
 
 RSpec.configure do |config|
-  config.include SessionHelpers
+  config.include Helpers
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction

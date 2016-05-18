@@ -3,6 +3,7 @@ feature 'any visitor to website can view listings' do
 
     #sign_up
     #sign_in
+		#this test needs to be modified once the filter feature is added
     create_property_1
     expect(current_path).to eq '/property/all'
     create_property_2
