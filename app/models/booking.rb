@@ -3,15 +3,15 @@ class Booking
 include DataMapper::Resource
 
 has n, :users, through: Resource
-has n, :properties, through: Resource
+has n, :property, through: Resource
 
     property :id, Serial
-    property :pending, Boolean
-    property :approved, Boolean
-    property :confirmed, Boolean
-    property :rejected, Boolean
-    property :cancelled, Boolean
-    property :completed, Boolean
+    property :pending, Boolean, required: false
+    property :approved, Boolean, required: false
+    property :confirmed, Boolean, required: false
+    property :rejected, Boolean, required: false
+    property :cancelled, Boolean, required: false
+    property :completed, Boolean, required: false
     property :date, Date
 
 end
