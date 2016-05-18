@@ -2,13 +2,15 @@
 <html>
   <head>
     <title>Welcome to Arrrgbnb!</title>
-    <link rel="stylesheet" href="public/css/reset.css">
-    <link rel="stylesheet" href="public/css/application.css">
+    <link rel="stylesheet" href="../../public/css/reset.css">
+    <link rel="stylesheet" href="../../public/css/application.css">
   </head>
 
   <body>
     <%= partial :welcome %>
     <%= partial :flash %>
+    <%= partial :sign_up %>
+    <%= partial :log_in %>
     <%= yield %>
   </body>
 </html>

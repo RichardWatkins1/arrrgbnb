@@ -1,0 +1,10 @@
+<% if !current_user %>
+  <% if request.path!='/sessions/new' %>
+    <form action='/sessions/new'>
+      <label for='Log in'>
+        Already have an account?
+        <input type='submit' value='Log in'>
+      </label>
+    </form>
+    <% end %>
+<% end %>

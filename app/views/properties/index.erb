@@ -1,24 +1,11 @@
 <h1> Properties Available on ArrgBnB </h1>
 
-<form action='/sessions/new'>
-  <label for='Log in'>
-    Already have an account?
-    <input type='submit' value='Log in'>
-  </label>
-</form>
-
-<form action='/users/new'>
-  <label for='Create account'>
-    Don't have an account?
-    <input type='submit' value="Sign up">
-  </label>
-</form>
-
 <ul id='properties'>
   <% @properties.each do |property| %>
     <li>
       <!-- add picture here -->
       Title: <%= property.title %>
+      Property Type: <%= property.property_type %>
       Location:   <%= property.location   %>
       Price:   <%= property.price   %>
       Sleeps:   <%= property.sleeps   %>
