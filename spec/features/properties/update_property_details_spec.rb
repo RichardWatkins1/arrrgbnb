@@ -2,7 +2,6 @@ feature 'Update property details' do
 
   scenario 'User can edit property details' do
     sign_up
-    log_in
     create_property_1
     visit '/users/dashboard'
     click_button 'Edit Property Details'

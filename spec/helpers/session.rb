@@ -52,6 +52,30 @@ module Helpers
     click_button 'Sign up'
   end
 
+  def log_in2(email: 'hatter@example.com', password:'12345678')
+    visit '/sessions/new'
+    fill_in :email, with: email
+    fill_in :password, with: password
+    click_button 'Log in'
+  end
+
+  def sign_up2(name:'Mad Hatter',
+              username:'MadHatter',
+              email:'mad@example.com',
+              phone:'3333-44441',
+              password:'54321',
+              password_confirmation:'54321'
+             )
+    visit '/users/new'
+    fill_in :name, with: name
+    fill_in :username, with: username
+    fill_in :email, with: email
+    fill_in :phone, with: phone
+    fill_in :password, with: password
+    fill_in :password_confirmation, with: password_confirmation
+    click_button 'Sign up'
+  end
+
 #   def recover_password
 #     visit '/users/recover'
 #     fill_in :email, with: "alice@example.com"
