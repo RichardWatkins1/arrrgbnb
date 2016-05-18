@@ -12,7 +12,7 @@ class Property
   property :sleeps, Integer, required: true
   property :photo, String, required: true
   property :price, Float, required: true
-  property :date_available_to, String, required: true
-  property :date_available_from, String, required: true
+  property :date_available_to, Date, required: true
+  property :date_available_from, Date, required: true
 
 end

@@ -2,16 +2,18 @@ class Arrrgbnb < Sinatra::Base
 
 
   get '/property/all' do
-    @properties = Property.all
+    property = ( Property.all(property_type:params[:property_type]) + Property.all(location:params[:location]) + Property.all(sleeps:params[:sleeps].to_i) + Property.all(bedrooms:params[:bedrooms].to_i) + Property.all(:price.lte => params[:price].to_i) + (Property.all(:date_available_to.lte => params[:date_available_to]) & Property.all(:date_available_from.gte => params[:date_available_from])))
+    @properties = property ? property : Property.all
     erb :'properties/index'
   end
+
 
   get '/property/new' do
     erb :'properties/new_property'
   end
 
   post '/property/all' do
-  Property.create(
+    Property.create(
                             title:params[:title],
                             property_type:params[:property_type],
                             location:params[:location],
