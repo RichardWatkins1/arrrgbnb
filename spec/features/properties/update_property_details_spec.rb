@@ -13,6 +13,8 @@ feature 'Update property details' do
     fill_in :photo, with: 'www.myhousephoto.com'
     fill_in :price, with: 50
     fill_in :property_type, with: 'Farm'
+    fill_in :date_available_to, with: '2016-05-30'
+    fill_in :date_available_from, with: '2016-05-14'
     click_button 'Confirm Changes'
     expect(Property.last.property_type).to eq 'Farm'
   end
