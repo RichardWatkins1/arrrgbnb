@@ -2,6 +2,8 @@ class Property
 
 include DataMapper::Resource
 
+has n, :bookings, through: Resource
+
     property :id, Serial
     property :title, String, required: true
     property :property_type, String, required: true

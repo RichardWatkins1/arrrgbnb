@@ -1,9 +1,9 @@
 class Booking
 
-has n, :users, through Resource
-has n, :properties, through Resource
-
 include DataMapper::Resource
+
+has n, :users, through: Resource
+has n, :properties, through: Resource
 
     property :id, Serial
     property :pending, Boolean
