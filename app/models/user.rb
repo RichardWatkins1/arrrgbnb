@@ -3,9 +3,10 @@ require 'securerandom'
 require 'timecop'
 
 class User
+
   include DataMapper::Resource
 
-  # has n, :peeps, through: Resource
+  has n, :bookings, through: Resource
 
   property :id, Serial
   property :name, String
