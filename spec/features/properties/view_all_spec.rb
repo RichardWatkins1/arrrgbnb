@@ -1,12 +1,11 @@
 feature 'any visitor to website can view listings' do
 	scenario 'view all properties listed' do
 
-    #sign_up
-    #sign_in
-		#this test needs to be modified once the filter feature is added
+    sign_up
     create_property_1
     expect(current_path).to eq '/property/all'
     create_property_2
+		click_button 'Log out'
 
     within 'ul#properties' do
     expect(page).to have_content('London')

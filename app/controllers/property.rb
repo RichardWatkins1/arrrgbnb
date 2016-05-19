@@ -39,10 +39,8 @@ class Arrrgbnb < Sinatra::Base
                     date_available_from:params[:date_available_from],
                     description:params[:description]
                     )
-    if current_user
-      current_user.property << property
-      current_user.save
-    end
+    current_user.property << property
+    current_user.save
     redirect "/property/all"
   end
 

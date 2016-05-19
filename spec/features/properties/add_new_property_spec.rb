@@ -1,7 +1,6 @@
 feature 'add new property' do
 	scenario 'save properties' do
-    #sign_up
-    #sign_in
+    sign_up
 		create_property_1
 	  expect(current_path).to eq '/property/all'
 
