@@ -1,10 +1,5 @@
 class Arrrgbnb < Sinatra::Base
 
-  get '/booking/all' do
-    @booking = Booking.all
-    erb :'bookings/index'
-  end
-
   get '/booking/new' do
      @property = Property.get(params[:id])
     erb :'bookings/new'
@@ -28,7 +23,7 @@ class Arrrgbnb < Sinatra::Base
                             )
     current_user.bookings << booking
     current_user.save
-    current_property = Property.get(5)
+    current_property = Property.get(params[:id])
     current_property.bookings << booking
     current_property.save
     redirect "/users/dashboard"
@@ -46,7 +41,7 @@ class Arrrgbnb < Sinatra::Base
     # >=date from && <=date_to, then if  booking.date!= date, true elseif booking.date=date &&booking.confirmed !=true then allow to book
 
   patch '/booking/all' do
-    Booking.update(
+    Booking.get(params[:booking_id]).update(
                     pending: params[:pending],
                     approved: params[:approved],
                     confirmed: params[:confirmed],

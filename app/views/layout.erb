@@ -11,10 +11,12 @@
     <%= partial :flash %>
     <%= partial :sign_up %>
     <%= partial :log_in %>
+    <%= partial :dashboard %>
     <%= yield %>
     <% if request.path=='/users/dashboard' %>
       <%= partial :bookings_made %>
       <%= partial :bookings_received %>
+      <%= partial :my_properties %>
     <% end %>
   </body>
 </html>

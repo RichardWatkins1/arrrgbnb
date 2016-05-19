@@ -13,7 +13,6 @@ gem 'sinatra-partial'
 gem 'timecop'
 gem 'mailgun-ruby'
 gem 'database_cleaner'
-gem 'mailgun-ruby'
 
 group :test do
   gem 'rspec-sinatra'

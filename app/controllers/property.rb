@@ -45,13 +45,14 @@ class Arrrgbnb < Sinatra::Base
   end
 
   get '/property/edit' do
+    @property = Property.get(params[:id])
     erb :'properties/edit'
   end
 
   patch '/property/all' do
 
     # if current_user    #the property instance below needs to be matched with the user
-      Property.update(
+      Property.get(params[:id]).update(
                             title:params[:title],
                             property_type:params[:property_type],
                             location:params[:location],
@@ -62,7 +63,7 @@ class Arrrgbnb < Sinatra::Base
                             date_available_to:params[:date_available_to],
                             date_available_from:params[:date_available_from]
                            )
-      redirect "/property/all"
+      redirect "/users/dashboard"
     # end
   end
 

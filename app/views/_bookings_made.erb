@@ -1,7 +1,7 @@
   <label for='Bookings made'>
     Bookings made
     <ul id='bookings made'>
-      <% @current_user.bookings.each do |booking| %>
+      <% @current_user.bookings.reverse.each do |booking| %>
         <li>
           Status: <%= "Pending approval by host" if booking.pending %>
                   <%= "Approved by host" if booking.approved %>
@@ -11,20 +11,40 @@
                   <%= "Completed" if booking.completed %>
           Date:   <%= booking.date  %>
           <% if booking.pending %>
-            <%= partial :cancel_booking %>
+            <form action='/booking/all' method='post'>
+              <input type="hidden" name="_method" value="patch">
+              <input type="hidden" name="booking_id" value="<%=booking.id%>">
+              <input type="hidden" name="pending" value=false>
+              <input type="hidden" name="approved" value=false>
+              <input type="hidden" name="confirmed" value=false>
+              <input type="hidden" name="rejected" value=false>
+              <input type="hidden" name="cancelled" value=true>
+              <input type="hidden" name="completed" value=false>
+              <input type='submit' value="cancel">
+            </form>
           <% end %>
 
           <% if booking.approved %>
-            <%= partial :cancel_booking %>
             <form action='/booking/all' method='post'>
               <input type="hidden" name="_method" value="patch">
-              <input type="hidden" name="id">
+              <input type="hidden" name="booking_id" value="<%=booking.id%>">
+              <input type="hidden" name="pending" value=false>
+              <input type="hidden" name="approved" value=false>
+              <input type="hidden" name="confirmed" value=false>
+              <input type="hidden" name="rejected" value=false>
+              <input type="hidden" name="cancelled" value=true>
+              <input type="hidden" name="completed" value=false>
+              <input type='submit' value="cancel">
+            </form>
+            <form action='/booking/all' method='post'>
+              <input type="hidden" name="_method" value="patch">
+              <input type="hidden" name="booking_id" value="<%=booking.id%>">
               <input type="hidden" name="pending" value=false>
               <input type="hidden" name="approved" value=false>
               <input type="hidden" name="confirmed" value=true>
               <input type="hidden" name="rejected" value=false>
               <input type="hidden" name="cancelled" value=false>
-              <input type="hidden" name="completed" value=false>            
+              <input type="hidden" name="completed" value=false>
               <input type='submit' value="confirm">
             </form>
           <% end %>
