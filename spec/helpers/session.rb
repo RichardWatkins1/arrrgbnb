@@ -4,6 +4,7 @@ module Helpers
     visit '/property/new'
     fill_in :title, with: 'Big House'
     fill_in :property_type, with: 'House'
+    fill_in :description, with: 'House and stuff'
     fill_in :location, with: 'London'
     fill_in :bedrooms, with: 4
     fill_in :sleeps, with: 8
@@ -18,6 +19,7 @@ module Helpers
     visit '/property/new'
     fill_in :title, with: 'Small House'
     fill_in :property_type, with: 'House'
+    fill_in :description, with: 'House and stuff'
     fill_in :location, with: 'London'
     fill_in :bedrooms, with: 2
     fill_in :sleeps, with: 4

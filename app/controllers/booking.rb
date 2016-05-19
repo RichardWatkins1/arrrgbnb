@@ -6,6 +6,7 @@ class Arrrgbnb < Sinatra::Base
   end
 
   get '/booking/new' do
+     @property = Property.get(params[:id])
     erb :'bookings/new'
   end
 
@@ -19,7 +20,7 @@ class Arrrgbnb < Sinatra::Base
                             completed: false,
                             date: params[:date]
                             )
-    current_user.bookings << booking 
+    current_user.bookings << booking
     current_user.save
     redirect "/booking/all"
   end

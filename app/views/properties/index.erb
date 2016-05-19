@@ -32,8 +32,7 @@
 </form>
 
 <ul id='properties'>
-
-  <% @properties.each do |property| %>
+<% @properties.each do |property| %>
     <li>
       <!-- add picture here -->
       Title: <%= property.title %>
@@ -42,11 +41,11 @@
       Price:   <%= property.price   %>
       Sleeps:   <%= property.sleeps   %>
       Bedrooms:   <%= property.bedrooms  %>
+      <form action='/booking/new' method='GET'>
+        <input type="hidden" name="id" value="<%=property.id%>"/>
+        <input type='submit' value='Details' />
+      </form>
 
     </li>
-  <% end %>
-</ul>
-
-<form action='/booking/new' method='get'>
-  <input type='submit' value='Book now'>
-</form>
+    <% end %>
+  </ul>

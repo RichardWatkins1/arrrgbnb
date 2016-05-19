@@ -36,7 +36,8 @@ class Arrrgbnb < Sinatra::Base
                     photo:params[:photo],
                     price:params[:price],
                     date_available_to:params[:date_available_to],
-                    date_available_from:params[:date_available_from]
+                    date_available_from:params[:date_available_from],
+                    description:params[:description]
                     )
     redirect "/property/all"
   end

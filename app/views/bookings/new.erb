@@ -1,5 +1,14 @@
-<h1>Enter a date below</h1>
 
+ <%= @property.title %>
+ Title: <%= @property.title %>
+ Property Type: <%= @property.property_type %>
+ Location:   <%= @property.location   %>
+ Price:   <%= @property.price   %>
+ Sleeps:   <%= @property.sleeps   %>
+ Bedrooms:   <%= @property.bedrooms  %>
+ Description: <%= @property.description  %>
+
+<h1>Enter a date below</h1>
   <form action='/booking/all' method='post'>
   <label for='date'>
     Date:
