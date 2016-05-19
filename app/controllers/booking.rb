@@ -6,6 +6,7 @@ class Arrrgbnb < Sinatra::Base
   end
 
   get '/booking/new' do
+     @property = Property.get(params[:id])
     erb :'bookings/new'
   end
 

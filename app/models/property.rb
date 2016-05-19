@@ -14,5 +14,6 @@ class Property
   property :price, Float, required: true
   property :date_available_to, Date, required: true
   property :date_available_from, Date, required: true
-  property :booked_dates, Text
+  property :description, Text, required: true
+
 end

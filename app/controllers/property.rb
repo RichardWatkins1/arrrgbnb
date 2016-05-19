@@ -37,6 +37,7 @@ class Arrrgbnb < Sinatra::Base
                     price:params[:price],
                     date_available_to:params[:date_available_to],
                     date_available_from:params[:date_available_from],
+                    description:params[:description]
                     )
     current_user.property << property
     current_user.save
