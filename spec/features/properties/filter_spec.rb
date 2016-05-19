@@ -5,7 +5,7 @@ feature 'filter listing' do
     create_property_2
     visit '/property/all'
     fill_in :sleeps, with: 4
-    click_button('Submit')
+    click_button('Search')
     expect(page).to have_content('Small House')
     expect(page).not_to have_content('Big House')
     end
