@@ -11,6 +11,13 @@ class Arrrgbnb < Sinatra::Base
   end
 
   post '/booking/all' do
+    date = params[:date]
+    if (date > current_property.date_available_to
+      && date < current_property.date_available_from)
+      || (current_property.bookings.dates.include?(date)
+        flash.now[:errors] = ['Sorry, property is unavailable for that date']
+        redirect "booking/new"
+    end
     booking = Booking.create( pending: true,
                             approved: false,
                             confirmed: false,
@@ -27,6 +34,16 @@ class Arrrgbnb < Sinatra::Base
     redirect "/users/dashboard"
   end
 
+
+
+
+
+
+
+
+
+
+    # >=date from && <=date_to, then if  booking.date!= date, true elseif booking.date=date &&booking.confirmed !=true then allow to book
 
   patch '/booking/all' do
     Booking.update(
