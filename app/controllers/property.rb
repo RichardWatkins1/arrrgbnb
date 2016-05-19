@@ -1,8 +1,18 @@
 class Arrrgbnb < Sinatra::Base
 
   get '/property/all' do
-    filter_list = params
+    filter_list =  { :title => params[:title],
+                     :property_type => params[:property_type],
+                     :location => params[:location],
+                     :bedrooms.gte => params[:bedrooms],
+                     :sleeps.gte => params[:sleeps],
+                     :photo => params[:photo],
+                     :price.lte => params[:price],
+                     :date_available_to.lte => params[:date_available_to],
+                     :date_available_from.gte => params[:date_available_from]
+                   }
     filter_list.reject! { |k,v| v.to_s.empty? }
+
     property_filtered = Property.all(filter_list)
     if property_filtered.length==0
       flash.now[:errors] = ['No results, please amend criteria and try again']

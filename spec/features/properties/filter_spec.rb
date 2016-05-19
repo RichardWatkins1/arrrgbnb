@@ -4,7 +4,7 @@ feature 'filter listing' do
     create_property_1
     create_property_2
     visit '/property/all'
-    fill_in :sleeps, with: 4
+    fill_in :price, with: 30
     click_button('Search')
     expect(page).to have_content('Small House')
     expect(page).not_to have_content('Big House')
