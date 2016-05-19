@@ -13,7 +13,7 @@
         <% if booking.pending %>
           <form action='/booking/all' method='post'>
             <input type="hidden" name="_method" value="patch">
-            <input type="hidden" name="id">
+            <input type="hidden" name="booking_id" value="<%=booking.id%>">
             <input type="hidden" name="pending" value=false>
             <input type="hidden" name="approved" value=false>
             <input type="hidden" name="confirmed" value=false>
@@ -24,7 +24,7 @@
           </form>
           <form action='/booking/all' method='post'>
             <input type="hidden" name="_method" value="patch">
-            <input type="hidden" name="id">
+            <input type="hidden" name="booking_id" value="<%=booking.id%>">
             <input type="hidden" name="pending" value=false>
             <input type="hidden" name="approved" value=true>
             <input type="hidden" name="confirmed" value=false>
