@@ -1,0 +1,13 @@
+<h2> My Properties </h2>
+<ul id='properties'>
+<% @current_user.property.each do |property| %>
+    <li>
+      Title: <%= property.title %>
+      <form action='/property/edit' method='GET'>
+        <input type="hidden" name="id" value="<%=property.id%>"/>
+        <input type='submit' value='Edit' />
+      </form>
+
+    </li>
+    <% end %>
+</ul>
