@@ -1,6 +1,5 @@
 <h1> Properties Available on ArrgBnB </h1>
-
-<form action='/property/all' method='GET'>
+  <form action='/property/all' method='GET'>
   <label for='property_type'>
     Property Type:
     <input type='text' name='property_type'/>
@@ -29,11 +28,11 @@
     Date Available To:
     <input type='date' name='date_available_to'/>
   </label>
-
-  <input type='submit' value='Submit' />
+  <input type='submit' value='Search' />
 </form>
 
 <ul id='properties'>
+
   <% @properties.each do |property| %>
     <li>
       <!-- add picture here -->
@@ -46,7 +45,6 @@
 
     </li>
   <% end %>
-
 </ul>
 
 <form action='/booking/new' method='get'>

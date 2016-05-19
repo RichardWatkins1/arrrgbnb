@@ -1,6 +1,5 @@
 class Arrrgbnb < Sinatra::Base
 
-
   get '/booking/all' do
     @booking = Booking.all
     erb :'bookings/index'
