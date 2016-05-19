@@ -12,5 +12,8 @@
     <%= partial :sign_up %>
     <%= partial :log_in %>
     <%= yield %>
+    <% if request.path=='/users/dashboard' %>
+      <%= partial :bookings_made %>
+    <% end %>
   </body>
 </html>
