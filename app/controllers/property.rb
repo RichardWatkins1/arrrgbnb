@@ -27,7 +27,7 @@ class Arrrgbnb < Sinatra::Base
   end
 
   post '/property/all' do
-    Property.create(
+    property = Property.create(
                     title:params[:title],
                     property_type:params[:property_type],
                     location:params[:location],
@@ -38,6 +38,8 @@ class Arrrgbnb < Sinatra::Base
                     date_available_to:params[:date_available_to],
                     date_available_from:params[:date_available_from],
                     )
+    current_user.property << property
+    current_user.save
     redirect "/property/all"
   end
 

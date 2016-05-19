@@ -20,6 +20,9 @@ class Arrrgbnb < Sinatra::Base
                             )
     current_user.bookings << booking
     current_user.save
+    current_property = Property.get(5)
+    current_property.bookings << booking
+    current_property.save
     redirect "/users/dashboard"
   end
 

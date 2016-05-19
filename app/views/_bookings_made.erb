@@ -21,11 +21,10 @@
               <input type="hidden" name="id">
               <input type="hidden" name="pending" value=false>
               <input type="hidden" name="approved" value=false>
-              <input type="hidden" name="confirmed" value=false>
+              <input type="hidden" name="confirmed" value=true>
               <input type="hidden" name="rejected" value=false>
-              <input type="hidden" name="cancelled" value=true>
-              <input type="hidden" name="completed" value=false>
-              <input type="hidden" name="date" value= <% booking.date %> >
+              <input type="hidden" name="cancelled" value=false>
+              <input type="hidden" name="completed" value=false>            
               <input type='submit' value="confirm">
             </form>
           <% end %>
