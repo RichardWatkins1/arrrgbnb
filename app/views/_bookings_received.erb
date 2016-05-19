@@ -1,7 +1,7 @@
 <label for='Bookings received'>
   Bookings received
   <ul id='bookings received'>
-    <% @current_user.property.bookings.each do |booking| %>
+    <% @current_user.property.bookings.reverse.each do |booking| %>
       <li>
         Status: <%= "Pending approval by you" if booking.pending %>
                 <%= "Approved by you" if booking.approved %>
