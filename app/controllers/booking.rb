@@ -11,7 +11,6 @@ class Arrrgbnb < Sinatra::Base
   end
 
   post '/booking/all' do
-
     booking = Booking.create( pending: true,
                             approved: false,
                             confirmed: false,
@@ -22,27 +21,24 @@ class Arrrgbnb < Sinatra::Base
                             )
     current_user.bookings << booking
     current_user.save
-    redirect "/booking/all"
+    current_property = Property.get(5)
+    current_property.bookings << booking
+    current_property.save
+    redirect "/users/dashboard"
   end
 
-  # get '/booking/edit' do
-  #   erb :'booking/edit'
-  # end
-  #
-  # patch '/booking/all' do
-  #
-  #         Booking.update(
-  #                           pending: params[:pending],
-  #                           approved: params[:approved],
-  #                           confirmed: params[:confirmed],
-  #                           rejected: params[:rejected],
-  #                           cancelled: params[:cancelled],
-  #                           completed: params[:completed],
-  #                           date: params[:date]
-  #                          )
-  #     redirect "/booking/all"
-  #
-  # end
+
+  patch '/booking/all' do
+    Booking.update(
+                    pending: params[:pending],
+                    approved: params[:approved],
+                    confirmed: params[:confirmed],
+                    rejected: params[:rejected],
+                    cancelled: params[:cancelled],
+                    completed: params[:completed],
+                   )
+    redirect "/users/dashboard"
+  end
 
 
     run! if app_file == $0

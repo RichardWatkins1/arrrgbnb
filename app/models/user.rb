@@ -7,6 +7,7 @@ class User
   include DataMapper::Resource
 
   has n, :bookings, through: Resource
+  has n, :property, through: Resource
 
   property :id, Serial
   property :name, String

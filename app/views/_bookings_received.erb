@@ -1,0 +1,41 @@
+<label for='Bookings received'>
+  Bookings received
+  <ul id='bookings received'>
+    <% @current_user.property.bookings.each do |booking| %>
+      <li>
+        Status: <%= "Pending approval by you" if booking.pending %>
+                <%= "Approved by you" if booking.approved %>
+                <%= "Confirmed by renter" if booking.confirmed %>
+                <%= "Rejected by you" if booking.rejected %>
+                <%= "Cancelled by renter" if booking.cancelled %>
+                <%= "Completed" if booking.completed %>
+        Date:   <%= booking.date  %>
+        <% if booking.pending %>
+          <form action='/booking/all' method='post'>
+            <input type="hidden" name="_method" value="patch">
+            <input type="hidden" name="id">
+            <input type="hidden" name="pending" value=false>
+            <input type="hidden" name="approved" value=false>
+            <input type="hidden" name="confirmed" value=false>
+            <input type="hidden" name="rejected" value=true>
+            <input type="hidden" name="cancelled" value=false>
+            <input type="hidden" name="completed" value=false>
+            <input type='submit' value="reject">
+          </form>
+          <form action='/booking/all' method='post'>
+            <input type="hidden" name="_method" value="patch">
+            <input type="hidden" name="id">
+            <input type="hidden" name="pending" value=false>
+            <input type="hidden" name="approved" value=true>
+            <input type="hidden" name="confirmed" value=false>
+            <input type="hidden" name="rejected" value=false>
+            <input type="hidden" name="cancelled" value=false>
+            <input type="hidden" name="completed" value=false>
+            <input type='submit' value="approve">
+          </form>
+        <% end %>
+
+      </li>
+    <% end %>
+  </ul>
+</label>
