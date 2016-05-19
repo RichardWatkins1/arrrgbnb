@@ -19,7 +19,7 @@ class Arrrgbnb < Sinatra::Base
                             completed: false,
                             date: params[:date]
                             )
-    current_user.bookings << booking
+    current_user.bookings << booking 
     current_user.save
     redirect "/booking/all"
   end
