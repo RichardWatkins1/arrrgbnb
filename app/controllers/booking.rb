@@ -12,9 +12,9 @@ class Arrrgbnb < Sinatra::Base
 
   post '/booking/all' do
     date = params[:date]
-    if (date > current_property.date_available_to
-      && date < current_property.date_available_from)
-      || (current_property.bookings.dates.include?(date)
+    if (date > current_property.date_available_to &&
+       date < current_property.date_available_from) ||
+        (current_property.bookings.dates.include?(date))
         flash.now[:errors] = ['Sorry, property is unavailable for that date']
         redirect "booking/new"
     end
