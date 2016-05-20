@@ -15,12 +15,12 @@
       <input type='date' name='date'>
     </label>
     <input type="hidden" name="id" value="<%=@property.id%>">
-    <input type='submit' value='Request booking'>
+    <input type='submit' value='Request booking' class='myButton'>
   </form>
   <% end%>
   <% if current_user.property.get(@property.id) %>
       <form action='/property/edit' method='GET'>
         <input type="hidden" name="id" value="<%=@property.id%>"/>
-        <input type='submit' value='Edit' />
+        <input type='submit' value='Edit' class='myButton' />
       </form>
   <% end%>
