@@ -21,7 +21,6 @@ class Arrrgbnb < Sinatra::Base
     erb :'properties/index'
   end
 
-
   get '/property/new' do
     erb :'properties/new'
   end
