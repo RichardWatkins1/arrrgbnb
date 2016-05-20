@@ -5,6 +5,7 @@ require 'sinatra/base'
 require 'sinatra/flash'
 require 'sinatra/partial'
 require 'tilt/erb'
+require 'sinatra'
 
 require_relative 'data_mapper_setup'
 require_relative 'server'

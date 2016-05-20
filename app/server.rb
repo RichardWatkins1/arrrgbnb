@@ -1,3 +1,5 @@
+set :public_folder, proc { File.join(root) }
+
 class Arrrgbnb < Sinatra::Base
   use Rack::MethodOverride
   enable :sessions
@@ -7,7 +9,6 @@ class Arrrgbnb < Sinatra::Base
   set :partial_template_engine, :erb
   enable :partial_underscores
 
-  set :public_folder, proc { File.join(root, 'public') }
 
   helpers do
     def current_user

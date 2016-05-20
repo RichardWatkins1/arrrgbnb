@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/application.css">
+  </head>
+  <video autoplay  poster="/videos/homepage.mp4" id="bgvid" loop>
+    <source src="/videos/homepage.webm" type="video/webm">
+    <source src="/videos/homepage.mp4" type="video/mp4">
+  </video>
+  <div id="intro">
+    <p>Looking for a window seat? The answer my friend, is blowing in the wind</p>
+    <br>
+    <br>
+    <p>
+      <form class = "homeform" action='/property/all' method='GET'>
+        <label for='location'>
+          <input type='text' name='location' value placeholder="Location"/>
+        </label>
+        <label for='date_available_from'>
+          <input type='date' name='date_available_from' value placeholder="Check In"/>
+        </label>
+        <label for='date_available_to'>
+          <input type='date' name='date_available_to' value placeholder="Check Out"/>
+        </label>
+        <input type='submit' class ="homebutton" value='Click here to go somewhere, anywhere' />
+      </form>
+    </p>
+  </div>
+</html>

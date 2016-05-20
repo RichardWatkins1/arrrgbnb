@@ -1,7 +1,7 @@
 class Arrrgbnb < Sinatra::Base
 
   get '/' do
-    redirect '/property/all'
+    erb :index
   end
 
   get '/users/new' do

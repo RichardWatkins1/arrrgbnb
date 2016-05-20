@@ -4,7 +4,7 @@ feature 'User log out' do
     sign_up
     log_in
     click_button 'Log out'
-    expect(current_path).to eq('/property/all') #change to homepage
+    expect(current_path).to eq('/') #change to homepage
     expect(page).to have_content 'goodbye!'
 
   end

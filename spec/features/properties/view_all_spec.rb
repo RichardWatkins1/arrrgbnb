@@ -6,6 +6,7 @@ feature 'any visitor to website can view listings' do
     expect(current_path).to eq '/property/all'
     create_property_2
 		click_button 'Log out'
+		click_button 'Click here to go somewhere, anywhere'
 
     within 'ul#properties' do
     expect(page).to have_content('London')
