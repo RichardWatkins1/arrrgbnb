@@ -13,5 +13,6 @@ has n, :property, through: Resource
     property :cancelled, Boolean, required: false
     property :completed, Boolean, required: false
     property :date, Date
+    property :property_id, Integer
 
 end
