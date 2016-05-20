@@ -10,7 +10,36 @@ AUTHORS:
 
 Team Arrrgonaut: Adam Skuse, Rahul Ramakrishna, Richard Watkins, Robin Heathcote and Grig Gerogiokas
 
-![The Arrrgonauts](https://github.com/rahulrama/arrrgbnb/blob/master/public/images/arrrgonauts.png)
+![https://www.dropbox.com/s/z25o0nlsojvj069/team_arrrgbnb.png?dl=0]
+
+HOMEPAGE
+--------
+![https://www.dropbox.com/s/t0tn162mi9e47n0/frontpage.png?dl=0]
+
+DOMAIN MODEL
+------------
+![https://www.dropbox.com/s/jin1nswdmlmbatn/domain.png?dl=0]
+
+TECHNOLOGIES
+------------
+A range of technologies have been used to create this AirBnB clone, these technologies include:
+-DataMapper
+-Postgres
+-sinatra
+-bcrypt
+-travis-ci
+-coveralls
+-rspec
+
+INSTALLATION
+------------
+Clone repo to a local directory, then run bundle to update your gems. The next step is to install PostgresSQL.
+
+Create 2 databases called arrrgbnb_development and arrrgbnb_test using the command create database arrrgbnb_test;
+
+Run rackup from your commandline and visit http://localhost:9292/, this will take you to the arrgbnb homepage.
+
+Sign up add a property and have a play with your new favourite way to book your next trip.
 
 
 USER STORIES:
@@ -49,3 +78,24 @@ I want to be able to list my properties.
 DOMAIN MODEL:
 ------------
 ![Domain Model](https://github.com/rahulrama/arrrgbnb/blob/master/public/images/arrrgbnb_domain_model.png)
+
+TEST
+----
+Type rspec into the commandline and this will run the tests. Below is an example of one of these tests:
+
+feature 'edit property details' do
+	scenario 'can edit an existing property' do
+    sign_up
+		create_property_1
+	  expect(current_path).to eq '/property/all'
+    click_button 'Dashboard'
+    click_button 'Edit'
+    fill_in :Title, with: 'Manor'
+    click_button 'Confirm Changes'
+    expect(page).to have_content('Manor')
+	end
+end
+
+LICENCE
+----
+All offers please refer to our legal team.

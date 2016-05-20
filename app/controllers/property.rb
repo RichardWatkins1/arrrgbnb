@@ -21,24 +21,12 @@ class Arrrgbnb < Sinatra::Base
     erb :'properties/index'
   end
 
-
   get '/property/new' do
     erb :'properties/new'
   end
 
   post '/property/all' do
-    property = Property.create(
-                    title:params[:title],
-                    property_type:params[:property_type],
-                    location:params[:location],
-                    bedrooms:params[:bedrooms],
-                    sleeps:params[:sleeps],
-                    photo:params[:photo],
-                    price:params[:price],
-                    date_available_to:params[:date_available_to],
-                    date_available_from:params[:date_available_from],
-                    description:params[:description]
-                    )
+    property = Property.create(params)
     current_user.property << property
     current_user.save
     redirect "/property/all"
