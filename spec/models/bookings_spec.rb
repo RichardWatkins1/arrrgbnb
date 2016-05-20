@@ -1,13 +1,8 @@
 describe Booking do
 
-  # let!(:booking) do
-  #   Booking.create(date: '2016-07-01')
-  # end
-
   def create_booking
     Booking.create(
-
-                  pending: false,
+                  pending: true,
                   approved: false,
                   confirmed: false,
                   rejected: false,
@@ -16,14 +11,19 @@ describe Booking do
                   date: '2016-07-01')
     end
 
-  it 'cannot make a booking if the property has already been booked for that date' do
-    create_booking
-    expect{create_booking}.not_to change(Booking, :pending)
-  end
+  # it 'cannot make a booking if the property has already been booked for that date' do
+  #   sign_up
+  #   create_property_1
+  #   click_button ('Log out')
+  #   sign_up
+  #   click_button('Book now')
+  #   expect{create_booking}.not_to change(Booking, :pending)
+  # end
+
+  # bring these tests into the feature test (and the last line can check that the model is updated)
 
   # it 'if the property is available for date chosen, it creates a new pending request' do
-  #   authenticated_user = User.authenticate(user.email, user.password)
-  #   expect(authenticated_user).to eq user
+  #   expect{create_booking}.to change(Booking, :pending)
   # end
   #
   # it 'the landlord can approve a pending request' do
