@@ -78,6 +78,12 @@ module Helpers
     click_button 'Sign up'
   end
 
+  def request_booking
+    visit '/property/all'
+    click_button('Details')
+    click_button('Request booking')
+  end
+
 #   def recover_password
 #     visit '/users/recover'
 #     fill_in :email, with: "alice@example.com"
