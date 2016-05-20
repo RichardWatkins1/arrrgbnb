@@ -28,7 +28,7 @@
     Date Available To:
     <input type='date' name='date_available_to'/>
   </label>
-  <input type='submit' value='Search' />
+  <input type='submit' value='Search' class='myButton' />
 </form>
 
 <ul id='properties'>
@@ -43,7 +43,7 @@
       Bedrooms:   <%= property.bedrooms  %>
       <form action='/booking/new' method='GET'>
         <input type="hidden" name="id" value="<%=property.id%>"/>
-        <input type='submit' value='Details' />
+        <input type='submit' value='Details' class='myButton' />
       </form>
 
     </li>
