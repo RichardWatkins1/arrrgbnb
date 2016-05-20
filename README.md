@@ -10,15 +10,15 @@ AUTHORS:
 
 Team Arrrgonaut: Adam Skuse, Rahul Ramakrishna, Richard Watkins, Robin Heathcote and Grig Gerogiokas
 
-![The Arrrgonauts](https://github.com/rahulrama/arrrgbnb/blob/master/public/images/arrrgonauts.png)
+![The Arrrgonauts](https://github.com/rahulrama/arrrgbnb/blob/master/app/public/images/arrrgonauts.png)
 
 HOMEPAGE
 --------
-![Home Page](https://github.com/rahulrama/arrrgbnb/blob/master/public/images/home_page.png)
+![Home Page](https://github.com/rahulrama/arrrgbnb/blob/master/app/public/images/home_page.png)
 
 DOMAIN MODEL
 ------------
-+![Domain Model](https://github.com/rahulrama/arrrgbnb/blob/master/public/images/arrrgbnb_domain_model.png)
++![Domain Model](https://github.com/rahulrama/arrrgbnb/blob/master/app/public/images/arrrgbnb_domain_model.png)
 
 TECHNOLOGIES
 ------------
