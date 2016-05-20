@@ -1,51 +1,73 @@
-<h1> Properties Available on ArrgBnB </h1>
-  <form action='/property/all' method='GET'>
-  <label for='property_type'>
-    Property Type:
-    <input type='text' name='property_type'/>
-  </label>
-  <label for='location'>
-    Location:
-    <input type='text' name='location'/>
-  </label>
-  <label for='bedrooms'>
-    Bedrooms:
-    <input type='number' name='bedrooms'/>
-  </label>
-  <label for='sleeps'>
-    Sleeps:
-    <input type='number' name='sleeps'/>
-  </label>
-  <label for='price'>
-    Price:
-    <input type='number' name='price'/>
-  </label>
-    <label for='date_available_from'>
-    Date Available from:
-    <input type='date' name='date_available_from'/>
-  </label>
-  <label for='date_available_to'>
-    Date Available To:
-    <input type='date' name='date_available_to'/>
-  </label>
-  <input type='submit' value='Search' />
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
 
-<ul id='properties'>
-<% @properties.each do |property| %>
-    <li>
-      <!-- add picture here -->
-      Title: <%= property.title %>
-      Property Type: <%= property.property_type %>
-      Location:   <%= property.location   %>
-      Price:   <%= property.price   %>
-      Sleeps:   <%= property.sleeps   %>
-      Bedrooms:   <%= property.bedrooms  %>
-      <form action='/booking/new' method='GET'>
-        <input type="hidden" name="id" value="<%=property.id%>"/>
-        <input type='submit' value='Details' />
-      </form>
+	<link rel="stylesheet" type="text/css" href="/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/css/responsive.css">
 
-    </li>
-    <% end %>
-  </ul>
+	<script type="text/javascript" src="/js/jquery.js"></script>
+	<script type="text/javascript" src="/js/main.js"></script>
+</head>
+<body>
+
+<section class="advanced_search">
+  <h1> Properties Available on ArrgBnB </h1>
+    <form action='/property/all' method='GET'>
+    <label for='property_type'>
+      Property Type:
+      <input type='text' name='property_type'/>
+    </label>
+    <label for='location'>
+      Location:
+      <input type='text' name='location'/>
+    </label>
+    <label for='bedrooms'>
+      Bedrooms:
+      <input type='number' name='bedrooms'/>
+    </label>
+    <label for='sleeps'>
+      Sleeps:
+      <input type='number' name='sleeps'/>
+    </label>
+    <label for='price'>
+      Price:
+      <input type='number' name='price'/>
+    </label>
+      <label for='date_available_from'>
+      Date Available from:
+      <input type='date' name='date_available_from'/>
+    </label>
+    <label for='date_available_to'>
+      Date Available To:
+      <input type='date' name='date_available_to'/>
+    </label>
+    <input type='submit' value='Search' />
+  </form>
+</section>
+
+<section class="listings">
+  <div class="wrapper">
+    <ul class="properties_list" id='properties'>
+      <% @properties.each do |property| %>
+        <li>
+          <img src="/images/property_1.jpg" alt="" title="" class="property_img"/>
+          <div class="property_details">
+            <span class="price">Price:   <%= property.price   %></span>
+            <h1>Title: <%= property.title %></h1>
+            <h2>Property Type: <%= property.property_type %>
+              Location:   <%= property.location   %></h2>
+          </div>
+          <span class="property_size">
+            Sleeps:   <%= property.sleeps   %>
+            Bedrooms:   <%= property.bedrooms  %></span>
+            <form action='/booking/new' method='GET'>
+              <input type="hidden" name="id" value="<%=property.id%>"/>
+              <input type='submit' value='Details' />
+            </form>
+          </li>
+        <% end %>
+    </ul>
+  </div>
+</section>
+</body>
