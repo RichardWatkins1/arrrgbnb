@@ -1,5 +1,5 @@
 
- <%= @property.title %>
+
  Title: <%= @property.title %>
  Property Type: <%= @property.property_type %>
  Location:   <%= @property.location   %>
@@ -7,13 +7,20 @@
  Sleeps:   <%= @property.sleeps   %>
  Bedrooms:   <%= @property.bedrooms  %>
  Description: <%= @property.description  %>
-
-<h1>Enter a date below</h1>
-  <form action='/booking/all' method='post'>
-  <label for='date'>
-    Date:
-    <input type='date' name='date'>
-  </label>
-  <input type="hidden" name="id" value="<%=@property.id%>">
-  <input type='submit' value='Request booking'>
+<% if !current_user.property.get(@property.id) %>
+  <h1>Enter a date below</h1>
+    <form action='/booking/all' method='post'>
+    <label for='date'>
+      Date:
+      <input type='date' name='date'>
+    </label>
+    <input type="hidden" name="id" value="<%=@property.id%>">
+    <input type='submit' value='Request booking'>
   </form>
+  <% end%>
+  <% if current_user.property.get(@property.id) %>
+      <form action='/property/edit' method='GET'>
+        <input type="hidden" name="id" value="<%=@property.id%>"/>
+        <input type='submit' value='Edit' />
+      </form>
+  <% end%>
