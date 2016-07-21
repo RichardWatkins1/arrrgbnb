@@ -19,13 +19,13 @@ DOMAIN MODEL
 TECHNOLOGIES
 ------------
 A range of technologies have been used to create this AirBnB clone, these technologies include:
--DataMapper
--Postgres
--sinatra
--bcrypt
--travis-ci
--coveralls
--rspec
+- DataMapper
+- PostgresSQL
+- Sinatra
+- bcrypt
+- travis-ci
+- coveralls
+- rspec
 
 INSTALLATION
 ------------
